@@ -1,0 +1,207 @@
+/* =====================================================
+   DMACQ — TOKEN UTILITIES (PURE)
+   Uses ONLY --dmacq-* Tokens
+   ===================================================== */
+
+@layer utilities {
+  /* =====================================================
+     SPACING
+     ===================================================== */
+
+  .dmacq .gap-1 {
+    gap: var(--dmacq-space-4);
+  }
+  .dmacq .gap-2 {
+    gap: var(--dmacq-space-8);
+  }
+  .dmacq .gap-3 {
+    gap: var(--dmacq-space-16);
+  }
+  .dmacq .gap-4 {
+    gap: var(--dmacq-space-16);
+  }
+  .dmacq .gap-5 {
+    gap: var(--dmacq-space-20);
+  }
+  .dmacq .gap-6 {
+    gap: var(--dmacq-space-24);
+  }
+
+  .dmacq .space-x-2 > :not([hidden]) ~ :not([hidden]) {
+    margin-left: var(--dmacq-space-0);
+  }
+
+  .dmacq .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    margin-left: var(--dmacq-space-2);
+  }
+
+  .dmacq .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: var(--dmacq-space-0);
+  }
+
+  .dmacq .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: var(--dmacq-space-2);
+  }
+
+  .dmacq .p-2 {
+    padding: var(--dmacq-space-8);
+  }
+  .dmacq .p-3 {
+    padding: var(--dmacq-space-12);
+  }
+  .dmacq .p-4 {
+    padding: var(--dmacq-space-16);
+  }
+  .dmacq .p-5 {
+    padding: var(--dmacq-space-20);
+  }
+  .dmacq .p-6 {
+    padding: var(--dmacq-space-24);
+  }
+
+  .dmacq .px-4 {
+    padding-left: var(--dmacq-space-16);
+    padding-right: var(--dmacq-space-16);
+  }
+
+  .dmacq .py-4 {
+    padding-top: var(--dmacq-space-16);
+    padding-bottom: var(--dmacq-space-16);
+  }
+
+  /* =====================================================
+     BORDER RADIUS
+     ===================================================== */
+
+  .dmacq .rounded-none {
+    border-radius: var(--dmacq-radius-none);
+  }
+  .dmacq .rounded-sm {
+    border-radius: var(--dmacq-radius-sm);
+  }
+  .dmacq .rounded-md {
+    border-radius: var(--dmacq-radius-md);
+  }
+  .dmacq .rounded-lg {
+    border-radius: var(--dmacq-radius-lg);
+  }
+  .dmacq .rounded-xl {
+    border-radius: var(--dmacq-radius-xl);
+  }
+  .dmacq .rounded-2xl {
+    border-radius: var(--dmacq-radius-2xl);
+  }
+  .dmacq .rounded-full {
+    border-radius: var(--dmacq-radius-round);
+  }
+
+  /* =====================================================
+     TYPOGRAPHY
+     ===================================================== */
+
+  .dmacq .text-xs {
+    font-size: var(--dmacq-fs-12);
+    line-height: var(--dmacq-lh-16);
+    font-family: var(--dmacq-font-primary);
+  }
+
+  .dmacq .text-sm {
+    font-size: var(--dmacq-fs-14);
+    /* line-height: var(--dmacq-lh-20); */
+    font-family: var(--dmacq-font-primary);
+  }
+
+  .dmacq .text-base {
+    font-size: var(--dmacq-fs-16);
+    line-height: var(--dmacq-lh-24);
+    font-family: var(--dmacq-font-primary);
+  }
+
+  .dmacq .text-lg {
+    font-size: var(--dmacq-fs-18);
+    line-height: var(--dmacq-lh-26);
+    font-family: var(--dmacq-font-primary);
+  }
+
+  .dmacq .text-xl {
+    font-size: var(--dmacq-fs-20);
+    line-height: var(--dmacq-lh-28);
+    font-family: var(--dmacq-font-primary);
+  }
+
+  .dmacq .font-regular {
+    font-weight: var(--dmacq-fw-regular);
+  }
+  .dmacq .font-medium {
+    font-weight: var(--dmacq-fw-medium);
+  }
+  .dmacq .font-semibold {
+    font-weight: var(--dmacq-fw-semibold);
+  }
+  .dmacq .font-bold {
+    font-weight: var(--dmacq-fw-bold);
+  }
+
+  /* =====================================================
+     SHADOW
+     ===================================================== */
+
+  .dmacq .shadow-low {
+    box-shadow: var(--dmacq-shadow-low);
+  }
+  .dmacq .shadow-mid {
+    box-shadow: var(--dmacq-shadow-mid);
+  }
+  .dmacq .shadow-high {
+    box-shadow: var(--dmacq-shadow-high);
+  }
+
+  /* =====================================================
+     TABLE
+     ===================================================== */
+
+  .dmacq table th,
+  .dmacq table td {
+    padding: var(--dmacq-space-12);
+  }
+
+  /* =====================================================
+     DROPDOWN ITEMS — NO BORDERS
+     ===================================================== */
+
+  .dmacq [role='menuitem'],
+  .dmacq [role='option'] {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: var(--dmacq-radius-md);
+  }
+
+  .dmacq [role='menuitem']:focus,
+  .dmacq [role='menuitem']:focus-visible,
+  .dmacq [role='option']:focus,
+  .dmacq [role='option']:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  /* =====================================================
+     DROPDOWN ACTIVE STATE
+     ===================================================== */
+
+  .dmacq input:focus,
+  .dmacq input:focus-visible,
+  .dmacq textarea:focus,
+  .dmacq textarea:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: var(--dmacq-neutral-200) !important;
+  }
+
+  .dmacq .data-\[state\=active\]\:bg-background {
+    &[data-state='active'] {
+      background-color: var(--dmacq-primary-500) !important;
+      color: var(--dmacq-white-0) !important;
+    }
+  }
+}

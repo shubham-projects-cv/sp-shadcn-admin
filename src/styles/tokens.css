@@ -1,0 +1,158 @@
+/* =====================================================
+   DMACQ DESIGN TOKENS — SOURCE OF TRUTH
+   ===================================================== */
+
+:root {
+  /* =====================================================
+     PRIMARY COLORS
+     ===================================================== */
+
+  --dmacq-primary-50: #f5f8ff;
+  --dmacq-primary-100: #d8e4fd;
+  --dmacq-primary-200: #b4cdfd;
+  --dmacq-primary-300: #75a3ff;
+  --dmacq-primary-400: #4d7fff;
+  --dmacq-primary-500: #305eff;
+  --dmacq-primary-600: #2950da;
+  --dmacq-primary-700: #2243b6;
+  --dmacq-primary-800: #1b3591;
+  --dmacq-primary-900: #14286d;
+  --dmacq-primary-1000: #0d1a48;
+
+  /* Primary Alpha */
+  --dmacq-primary-a25: rgba(48, 94, 255, 0.09);
+  --dmacq-primary-a50: rgba(48, 94, 255, 0.18);
+  --dmacq-primary-a100: rgba(48, 94, 255, 0.24);
+  --dmacq-primary-a200: rgba(48, 94, 255, 0.32);
+
+  --dmacq-primary-logo: #ef4444;
+
+  /* =====================================================
+     NEUTRAL WHITE
+     ===================================================== */
+
+  --dmacq-white-0: #ffffff;
+  --dmacq-white-100: rgba(255, 255, 255, 0.9);
+  --dmacq-white-200: rgba(255, 255, 255, 0.8);
+  --dmacq-white-300: rgba(255, 255, 255, 0.7);
+  --dmacq-white-400: rgba(255, 255, 255, 0.6);
+  --dmacq-white-500: rgba(255, 255, 255, 0.5);
+  --dmacq-white-600: rgba(255, 255, 255, 0.4);
+  --dmacq-white-700: rgba(255, 255, 255, 0.3);
+  --dmacq-white-800: rgba(255, 255, 255, 0.2);
+  --dmacq-white-900: rgba(255, 255, 255, 0.1);
+
+  /* =====================================================
+     NEUTRAL LIGHT
+     ===================================================== */
+
+  --dmacq-neutral-0: #ffffff;
+  --dmacq-neutral-50: #f8fafc;
+  --dmacq-neutral-100: #f1f5fa;
+  --dmacq-neutral-200: #e3eaf3;
+  --dmacq-neutral-300: #cbd5e2;
+  --dmacq-neutral-400: #b1c1d2;
+  --dmacq-neutral-500: #90a5bb;
+  --dmacq-neutral-600: #768ea7;
+  --dmacq-neutral-700: #6c849d;
+  --dmacq-neutral-800: #58728d;
+  --dmacq-neutral-900: #40566d;
+  --dmacq-neutral-1000: #2f4256;
+  --dmacq-neutral-1100: #243547;
+  --dmacq-neutral-1200: #192839;
+  --dmacq-neutral-1300: #0c1927;
+
+  /* Neutral Alpha */
+  --dmacq-neutral-a25: rgba(108, 132, 157, 0.06);
+  --dmacq-neutral-a50: rgba(108, 132, 157, 0.09);
+  --dmacq-neutral-a100: rgba(108, 132, 157, 0.18);
+  --dmacq-neutral-a200: rgba(108, 132, 157, 0.32);
+
+  /* =====================================================
+     TYPOGRAPHY (FROM FIGMA)
+     ===================================================== */
+
+  --dmacq-font-primary: 'Inter', sans-serif;
+
+  /* Font Sizes */
+  --dmacq-fs-56: 56px;
+  --dmacq-fs-48: 48px;
+  --dmacq-fs-40: 40px;
+  --dmacq-fs-32: 32px;
+  --dmacq-fs-24: 24px;
+  --dmacq-fs-20: 20px;
+  --dmacq-fs-18: 18px;
+  --dmacq-fs-16: 16px;
+  --dmacq-fs-14: 14px;
+  --dmacq-fs-13: 13px;
+  --dmacq-fs-12: 12px;
+  --dmacq-fs-10: 10px;
+
+  /* Line Heights (px from Figma) */
+  --dmacq-lh-64: 64px;
+  --dmacq-lh-56: 56px;
+  --dmacq-lh-48: 48px;
+  --dmacq-lh-40: 40px;
+  --dmacq-lh-36: 36px;
+  --dmacq-lh-32: 32px;
+  --dmacq-lh-30: 30px;
+  --dmacq-lh-28: 28px;
+  --dmacq-lh-26: 26px;
+  --dmacq-lh-24: 24px;
+  --dmacq-lh-20: 20px;
+  --dmacq-lh-18: 18px;
+  --dmacq-lh-16: 16px;
+  --dmacq-lh-14: 14px;
+
+  /* Font Weights */
+  --dmacq-fw-extrabold: 800;
+  --dmacq-fw-bold: 700;
+  --dmacq-fw-semibold: 600;
+  --dmacq-fw-medium: 500;
+  --dmacq-fw-regular: 400;
+
+  /* Letter Spacing */
+  --dmacq-ls-tight: -0.01em;
+  --dmacq-ls-normal: 0em;
+
+  /* =====================================================
+     BORDER RADIUS
+     ===================================================== */
+
+  --dmacq-radius-none: 0px;
+  --dmacq-radius-sm: 4px;
+  --dmacq-radius-md: 8px;
+  --dmacq-radius-lg: 12px;
+  --dmacq-radius-xl: 16px;
+  --dmacq-radius-2xl: 24px;
+  --dmacq-radius-round: 1000px;
+
+  /* =====================================================
+     ELEVATION
+     ===================================================== */
+
+  --dmacq-shadow-low: 0px 2px 16px 0px rgba(0, 0, 0, 0.08);
+  --dmacq-shadow-mid: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
+  --dmacq-shadow-high: 0px 16px 48px -4px rgba(0, 0, 0, 0.16);
+
+  /* =====================================================
+     SPACING
+     ===================================================== */
+
+  --dmacq-space-0: 0px;
+  --dmacq-space-2: 2px;
+  --dmacq-space-4: 4px;
+  --dmacq-space-8: 8px;
+  --dmacq-space-12: 12px;
+  --dmacq-space-16: 16px;
+  --dmacq-space-20: 20px;
+  --dmacq-space-24: 24px;
+  --dmacq-space-32: 32px;
+  --dmacq-space-40: 40px;
+  --dmacq-space-48: 48px;
+  --dmacq-space-56: 56px;
+  --dmacq-space-64: 64px;
+  --dmacq-space-72: 72px;
+  --dmacq-space-96: 96px;
+  --dmacq-space-120: 120px;
+}

@@ -17,7 +17,6 @@ import { ThemeProvider } from './context/theme-provider'
 import { routeTree } from './routeTree.gen'
 import './styles/index.css'
 
-
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

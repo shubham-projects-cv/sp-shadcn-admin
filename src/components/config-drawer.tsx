@@ -9,8 +9,11 @@ import { IconSidebarFloating } from '@/assets/custom/icon-sidebar-floating'
 import { IconSidebarInset } from '@/assets/custom/icon-sidebar-inset'
 import { IconSidebarSidebar } from '@/assets/custom/icon-sidebar-sidebar'
 import { IconThemeDark } from '@/assets/custom/icon-theme-dark'
+import { IconThemeDmacq } from '@/assets/custom/icon-theme-dmacq'
 import { IconThemeLight } from '@/assets/custom/icon-theme-light'
 import { IconThemeSystem } from '@/assets/custom/icon-theme-system'
+// ✅ ADDED
+
 import { cn } from '@/lib/utils'
 import { useDirection } from '@/context/direction-provider'
 import { type Collapsible, useLayout } from '@/context/layout-provider'
@@ -26,6 +29,10 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 import { useSidebar } from './ui/sidebar'
+
+/* =====================================================
+   MAIN
+===================================================== */
 
 export function ConfigDrawer() {
   const { setOpen } = useSidebar()
@@ -53,19 +60,23 @@ export function ConfigDrawer() {
           <Settings aria-hidden='true' />
         </Button>
       </SheetTrigger>
+
       <SheetContent className='flex flex-col'>
         <SheetHeader className='pb-0 text-start'>
           <SheetTitle>Theme Settings</SheetTitle>
+
           <SheetDescription id='config-drawer-description'>
             Adjust the appearance and layout to suit your preferences.
           </SheetDescription>
         </SheetHeader>
+
         <div className='space-y-6 overflow-y-auto px-4'>
           <ThemeConfig />
           <SidebarConfig />
           <LayoutConfig />
           <DirConfig />
         </div>
+
         <SheetFooter className='gap-2'>
           <Button
             variant='destructive'
@@ -79,6 +90,10 @@ export function ConfigDrawer() {
     </Sheet>
   )
 }
+
+/* =====================================================
+   COMMON
+===================================================== */
 
 function SectionTitle({
   title,
@@ -99,6 +114,7 @@ function SectionTitle({
       )}
     >
       {title}
+
       {showReset && onReset && (
         <Button
           size='icon'
@@ -149,14 +165,16 @@ function RadioGroupItem({
           )}
           aria-hidden='true'
         />
+
         <item.icon
           className={cn(
             !isTheme &&
-              'fill-primary stroke-primary group-data-[state=unchecked]:fill-muted-foreground group-data-[state=unchecked]:stroke-muted-foreground'
+              'fill-muted-foreground stroke-muted-foreground group-data-[state=checked]:fill-muted-foreground group-data-[state=checked]:stroke-muted-foreground'
           )}
           aria-hidden='true'
         />
       </div>
+
       <div
         className='mt-1 text-xs'
         id={`${item.value}-description`}
@@ -168,8 +186,13 @@ function RadioGroupItem({
   )
 }
 
+/* =====================================================
+   THEME
+===================================================== */
+
 function ThemeConfig() {
   const { defaultTheme, theme, setTheme } = useTheme()
+
   return (
     <div>
       <SectionTitle
@@ -177,10 +200,11 @@ function ThemeConfig() {
         showReset={theme !== defaultTheme}
         onReset={() => setTheme(defaultTheme)}
       />
+
       <Radio
         value={theme}
         onValueChange={setTheme}
-        className='grid w-full max-w-md grid-cols-3 gap-4'
+        className='grid w-full max-w-md grid-cols-4 gap-4' // ✅ 4 cols
         aria-label='Select theme preference'
         aria-describedby='theme-description'
       >
@@ -200,19 +224,30 @@ function ThemeConfig() {
             label: 'Dark',
             icon: IconThemeDark,
           },
+          {
+            value: 'dmacq', // ✅ ADDED
+            label: 'Dmacq',
+            icon: IconThemeDmacq,
+          },
         ].map((item) => (
           <RadioGroupItem key={item.value} item={item} isTheme />
         ))}
       </Radio>
+
       <div id='theme-description' className='sr-only'>
-        Choose between system preference, light mode, or dark mode
+        Choose between system preference, light mode, dark mode, or dmacq theme
       </div>
     </div>
   )
 }
 
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
 function SidebarConfig() {
   const { defaultVariant, variant, setVariant } = useLayout()
+
   return (
     <div className='max-md:hidden'>
       <SectionTitle
@@ -220,6 +255,7 @@ function SidebarConfig() {
         showReset={defaultVariant !== variant}
         onReset={() => setVariant(defaultVariant)}
       />
+
       <Radio
         value={variant}
         onValueChange={setVariant}
@@ -247,12 +283,17 @@ function SidebarConfig() {
           <RadioGroupItem key={item.value} item={item} />
         ))}
       </Radio>
+
       <div id='sidebar-description' className='sr-only'>
         Choose between inset, floating, or standard sidebar layout
       </div>
     </div>
   )
 }
+
+/* =====================================================
+   LAYOUT
+===================================================== */
 
 function LayoutConfig() {
   const { open, setOpen } = useSidebar()
@@ -270,6 +311,7 @@ function LayoutConfig() {
           setCollapsible(defaultCollapsible)
         }}
       />
+
       <Radio
         value={radioState}
         onValueChange={(v) => {
@@ -277,6 +319,7 @@ function LayoutConfig() {
             setOpen(true)
             return
           }
+
           setOpen(false)
           setCollapsible(v as Collapsible)
         }}
@@ -304,6 +347,7 @@ function LayoutConfig() {
           <RadioGroupItem key={item.value} item={item} />
         ))}
       </Radio>
+
       <div id='layout-description' className='sr-only'>
         Choose between default expanded, compact icon-only, or full layout mode
       </div>
@@ -311,8 +355,13 @@ function LayoutConfig() {
   )
 }
 
+/* =====================================================
+   DIRECTION
+===================================================== */
+
 function DirConfig() {
   const { defaultDir, dir, setDir } = useDirection()
+
   return (
     <div>
       <SectionTitle
@@ -320,6 +369,7 @@ function DirConfig() {
         showReset={defaultDir !== dir}
         onReset={() => setDir(defaultDir)}
       />
+
       <Radio
         value={dir}
         onValueChange={setDir}
@@ -346,6 +396,7 @@ function DirConfig() {
           <RadioGroupItem key={item.value} item={item} />
         ))}
       </Radio>
+
       <div id='direction-description' className='sr-only'>
         Choose between left-to-right or right-to-left site direction
       </div>

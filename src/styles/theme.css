@@ -165,3 +165,11 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 }
+
+.theme-preview {
+  background: var(--background) !important;
+}
+
+.dmacq .theme-preview {
+  background: var(--dmacq-neutral-50) !important;
+}

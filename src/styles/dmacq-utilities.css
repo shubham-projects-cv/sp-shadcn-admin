@@ -185,6 +185,16 @@
     box-shadow: none !important;
   }
 
+  .rounded-\[6px\] {
+    border-radius: var(--dmacq-radius-sm) !important;
+  }
+
+  .dmacq /* Remove rounding inside theme preview SVG */
+.theme-preview svg rect {
+    rx: 0 !important;
+    ry: 0 !important;
+  }
+
   /* =====================================================
      DROPDOWN ACTIVE STATE
      ===================================================== */
@@ -203,5 +213,13 @@
       background-color: var(--dmacq-primary-500) !important;
       color: var(--dmacq-white-0) !important;
     }
+  }
+}
+
+.dmacq {
+  [data-highlighted],
+  [data-state='checked'] {
+    background: var(--dmacq-neutral-100);
+    color: var(--dmacq-primary-500);
   }
 }
